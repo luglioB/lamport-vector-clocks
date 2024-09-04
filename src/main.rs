@@ -8,8 +8,10 @@ fn main() {
             run();
         });
     }
-
-    thread::sleep(std::time::Duration::from_secs(1));
+    pool.send_message("this is a message".to_string());
+    println!("job and message sent");
+    thread::sleep(std::time::Duration::from_secs(4));
+    println!("done");
 }
 
 fn run(){
